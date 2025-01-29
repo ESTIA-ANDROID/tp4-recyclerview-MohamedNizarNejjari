@@ -3,21 +3,19 @@ package com.openclassrooms.magicgithub.utils
 import androidx.recyclerview.widget.DiffUtil
 import com.openclassrooms.magicgithub.model.User
 
-class UserDiffCallback(private val newUsers: List<User>, private val oldUsers: List<User>) :
-    DiffUtil.Callback() {
-    override fun getOldListSize(): Int {
-        return oldUsers.size
-    }
+class UserDiffCallback(
+    private val newList: List<User>,
+    private val oldList: List<User>
+) : DiffUtil.Callback() {
 
-    override fun getNewListSize(): Int {
-        return newUsers.size
-    }
+    override fun getOldListSize(): Int = oldList.size
+    override fun getNewListSize(): Int = newList.size
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldUsers[oldItemPosition].id === newUsers[newItemPosition].id
+        return oldList[oldItemPosition].id == newList[newItemPosition].id
     }
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldUsers[oldItemPosition] == newUsers[newItemPosition]
+        return oldList[oldItemPosition] == newList[newItemPosition]
     }
 }

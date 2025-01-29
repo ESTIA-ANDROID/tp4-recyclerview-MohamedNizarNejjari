@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.openclassrooms.magicgithub.R
 import com.openclassrooms.magicgithub.model.User
 import com.openclassrooms.magicgithub.utils.UserDiffCallback
+import android.util.Log
+import com.bumptech.glide.Glide
+
 
 class UserListAdapter(  // FOR CALLBACK ---
     private val callback: Listener
@@ -26,7 +29,19 @@ class UserListAdapter(  // FOR CALLBACK ---
     }
 
     override fun onBindViewHolder(holder: ListUserViewHolder, position: Int) {
-        holder.bind(users[position], callback)
+        val user = users[position]
+
+        // Vérification des URLs des images
+        Log.d("UserAdapter", "Chargement de l'image pour ${user.name}: ${user.avatarUrl}")
+
+        holder.userNameTextView.text = user.name
+
+        // Charger l'image avec Glide
+        Glide.with(holder.itemView.context)
+            .load(user.avatarUrl)
+            .placeholder(android.R.drawable.ic_menu_gallery) // Image de chargement par défaut
+            .error(android.R.drawable.ic_menu_close_clear_cancel) // Image si erreur
+            .into(holder.userAvatarImageView)
     }
 
     override fun getItemCount(): Int {

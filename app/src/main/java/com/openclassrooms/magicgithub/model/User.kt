@@ -1,7 +1,7 @@
 package com.openclassrooms.magicgithub.model
 
 data class User(
-    val id: String,
-    val login: String,
+    val id: Int,
+    val name: String,
     val avatarUrl: String
 )

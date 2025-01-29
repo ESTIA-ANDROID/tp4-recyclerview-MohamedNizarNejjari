@@ -6,34 +6,34 @@ object FakeApiServiceGenerator {
 
     @JvmField
     val FAKE_USERS = listOf(
-        User("001", "Jake", "https://api.adorable.io/AVATARS/512/1.png"),
-        User("002", "Paul", "https://api.adorable.io/AVATARS/512/2.png"),
-        User("003", "Phil", "https://api.adorable.io/AVATARS/512/3.png"),
-        User("004", "Guillaume", "https://api.adorable.io/AVATARS/512/4.png"),
-        User("005", "Francis", "https://api.adorable.io/AVATARS/512/5.png"),
-        User("006", "George", "https://api.adorable.io/AVATARS/512/6.png"),
-        User("007", "Louis", "https://api.adorable.io/AVATARS/512/7.png"),
-        User("008", "Mateo", "https://api.adorable.io/AVATARS/512/8.png"),
-        User("009", "April", "https://api.adorable.io/AVATARS/512/9.png"),
-        User("010", "Louise", "https://api.adorable.io/AVATARS/512/10.png"),
-        User("011", "Elodie", "https://api.adorable.io/AVATARS/512/11.png"),
-        User("012", "Helene", "https://api.adorable.io/AVATARS/512/12.png"),
-        User("013", "Fanny", "https://api.adorable.io/AVATARS/512/13.png"),
-        User("014", "Laura", "https://api.adorable.io/AVATARS/512/14.png"),
-        User("015", "Gertrude", "https://api.adorable.io/AVATARS/512/15.png"),
-        User("016", "Chloé", "https://api.adorable.io/AVATARS/512/16.png"),
-        User("017", "April", "https://api.adorable.io/AVATARS/512/17.png"),
-        User("018", "Marie", "https://api.adorable.io/AVATARS/512/18.png"),
-        User("019", "Henri", "https://api.adorable.io/AVATARS/512/19.png"),
-        User("020", "Rémi", "https://api.adorable.io/AVATARS/512/20.png")
+        User(1, "Jake", "https://randomuser.me/api/portraits/men/1.jpg"),
+        User(2, "Paul", "https://randomuser.me/api/portraits/men/2.jpg"),
+        User(3, "Phil", "https://randomuser.me/api/portraits/men/3.jpg"),
+        User(4, "Guillaume", "https://randomuser.me/api/portraits/men/4.jpg"),
+        User(5, "Francis", "https://randomuser.me/api/portraits/men/5.jpg"),
+        User(6, "George", "https://randomuser.me/api/portraits/men/6.jpg"),
+        User(7, "Louis", "https://randomuser.me/api/portraits/men/7.jpg"),
+        User(8, "Mateo", "https://randomuser.me/api/portraits/men/8.jpg"),
+        User(9, "April", "https://randomuser.me/api/portraits/men/9.jpg"),
+        User(10, "Louise", "https://randomuser.me/api/portraits/men/10.jpg"),
+        User(11, "Elodie", "https://randomuser.me/api/portraits/men/11.jpg"),
+        User(12, "Helene", "https://randomuser.me/api/portraits/men/12.jpg"),
+        User(13, "Fanny", "https://randomuser.me/api/portraits/men/13.jpg"),
+        User(14, "Laura", "https://randomuser.me/api/portraits/men/14.jpg"),
+        User(15, "Gertrude", "https://randomuser.me/api/portraits/men/15.jpg"),
+        User(16, "Chloé", "https://randomuser.me/api/portraits/men/16.jpg"),
+        User(17, "April", "https://randomuser.me/api/portraits/men/17.jpg"),
+        User(18, "Marie", "https://randomuser.me/api/portraits/men/18.jpg"),
+        User(19, "Henri", "https://randomuser.me/api/portraits/men/19.jpg"),
+        User(20, "Rémi", "https://randomuser.me/api/portraits/men/20.jpg")
     )
 
     @JvmField
-    val FAKE_USERS_RANDOM = listOf(  // ✅ Correction : var -> val & Arrays.asList() -> listOf()
-        User("021", "Lea", "https://api.adorable.io/AVATARS/512/21.png"),
-        User("022", "Geoffrey", "https://api.adorable.io/AVATARS/512/22.png"),
-        User("023", "Simon", "https://api.adorable.io/AVATARS/512/23.png"),
-        User("024", "André", "https://api.adorable.io/AVATARS/512/24.png"),
-        User("025", "Leopold", "https://api.adorable.io/AVATARS/512/25.png")
+    val FAKE_USERS_RANDOM = listOf(
+        User(21, "Lea", "https://randomuser.me/api/portraits/men/21.jpg"),
+        User(22, "Geoffrey", "https://randomuser.me/api/portraits/men/22.jpg"),
+        User(23, "Simon", "https://randomuser.me/api/portraits/men/23.jpg"),
+        User(24, "André", "https://randomuser.me/api/portraits/men/24.jpg"),
+        User(25, "Leopold", "https://randomuser.me/api/portraits/men/25.jpg")
     )
 }
