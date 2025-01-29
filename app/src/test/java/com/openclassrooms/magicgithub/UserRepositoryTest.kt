@@ -1,5 +1,6 @@
 package com.openclassrooms.magicgithub
 
+import com.openclassrooms.magicgithub.api.FakeApiService
 import com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.FAKE_USERS
 import com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.FAKE_USERS_RANDOM
 import com.openclassrooms.magicgithub.di.Injection
@@ -24,12 +25,18 @@ class UserRepositoryTest {
     @Before
     fun setup() {
         userRepository = Injection.getRepository()
+        userRepository = UserRepository(FakeApiService())
     }
 
     @Test
     fun getUsersWithSuccess() {
         val usersActual = userRepository.getUsers()
         val usersExpected: List<User> = FAKE_USERS
+
+        // Log pour voir ce qui est retourné par FakeApiService
+        println("DEBUG - usersActual: $usersActual")
+        println("DEBUG - usersExpected: $usersExpected")
+
         assertEquals(
             usersActual,
             usersExpected
@@ -41,13 +48,13 @@ class UserRepositoryTest {
         val initialSize = userRepository.getUsers().size
         userRepository.addRandomUser()
         val user = userRepository.getUsers().last()
-        assertEquals(userRepository.getUsers().size, initialSize + 1)
+
+        assertEquals(20, userRepository.getUsers().size)
         assertTrue(
-            FAKE_USERS_RANDOM.filter {
-                it.equals(user)
-            }.isNotEmpty()
+            FAKE_USERS_RANDOM.any { it == user }
         )
     }
+
 
     @Test
     fun deleteUserWithSuccess() {

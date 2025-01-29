@@ -1,12 +1,11 @@
 package com.openclassrooms.magicgithub.api
 
 import com.openclassrooms.magicgithub.model.User
-import java.util.*
 
 object FakeApiServiceGenerator {
 
     @JvmField
-    var FAKE_USERS = mutableListOf(
+    val FAKE_USERS = listOf(
         User("001", "Jake", "https://api.adorable.io/AVATARS/512/1.png"),
         User("002", "Paul", "https://api.adorable.io/AVATARS/512/2.png"),
         User("003", "Phil", "https://api.adorable.io/AVATARS/512/3.png"),
@@ -30,7 +29,7 @@ object FakeApiServiceGenerator {
     )
 
     @JvmField
-    var FAKE_USERS_RANDOM = Arrays.asList(
+    val FAKE_USERS_RANDOM = listOf(  // ✅ Correction : var -> val & Arrays.asList() -> listOf()
         User("021", "Lea", "https://api.adorable.io/AVATARS/512/21.png"),
         User("022", "Geoffrey", "https://api.adorable.io/AVATARS/512/22.png"),
         User("023", "Simon", "https://api.adorable.io/AVATARS/512/23.png"),
